@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-background text-textPrimary antialiased selection:bg-accent/30 selection:text-accent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-wide text-textPrimary;
+  }
+
+  /* Custom Scrollbar for sleek UI */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-textSecondary/30 transition-colors;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-surface/75 backdrop-blur-md border border-border/80 shadow-xl;
+  }
+
+  /* Clip-path reveal transition for replay Gantt blocks */
+  .gantt-block-reveal {
+    transition: clip-path 0.1s linear;
+  }
+}
